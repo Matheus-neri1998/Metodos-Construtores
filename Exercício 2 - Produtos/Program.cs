@@ -7,6 +7,8 @@ namespace Exercício_2___Produtos
     {
         static void Main(string[] args)
         {
+            Produto product = new Produto();
+
             Console.WriteLine("Digite o nome do produto desejado: ");
             Console.ForegroundColor = ConsoleColor.Blue;
             string Nome = Console.ReadLine(); // nome do produto 1
@@ -28,22 +30,28 @@ namespace Exercício_2___Produtos
             Console.WriteLine("Insira o estoque do produto: ");
             Console.ForegroundColor = ConsoleColor.Black;
             int Estoque = int.Parse(Console.ReadLine()); // estoque do produto 1
-            Console.ResetColor(); 
-            // fim de produto 1
+            Console.ResetColor(); // fim de produto 1
 
-            Produto product= new Produto(Nome, Codigo, Descricao, Estoque);
-            
-
-            
-            Produto product2 = new Produto("Suco de Laranja", 10, "Este suco é natural", 15);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Nome do produto 2 {product2.Nome ??"sem nome"}, Código do produto {product2.Codigo} - " +
-            $"Descrição do produto: {product2.Descricao}, Estoque do produto: {product2.Estoque}");
-            Console.ResetColor(); 
+            Produto product2 = new Produto(Nome, Codigo, Descricao, Estoque);
             // fim de produto 2
-
             
 
+            Produto product3 = new Produto("Suco de Laranja", 5, "Este suco é natural", 22);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("----------------------------");
+            Console.Write($"Nome do produto: {product3.Nome ?? "sem nome"} - Código do produto: {product3.Codigo} - " +
+            $"Descrição do produto: {product3.Descricao}, Estoque do produto: {product3.Estoque}");
+            Console.ResetColor(); // fim de produto 3
+
+            Produto product4 = new Produto ();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            product4.Nome = "Refrigerante de Cola";
+            product4.Codigo = 7;
+            product4.Descricao = "0% de gás";
+            product4.Estoque = 14; // fim de produto 4
+            Console.ResetColor(); 
+
+            Console.ReadLine();
         }
     }
 }
